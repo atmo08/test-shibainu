@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+/* //////// #home //////// */
+
+/* ==================
+      main
+================== */
+
+/* /// mainImage //// */
+
+.mainImage{  
+  width: 100%;
+  max-width: 2400px; /* ブレーキ（最大幅）をかける */
+  margin:0 auto 60px;/* 真ん中寄せを追加 */
+  @media( max-width:768px){
+     margin:0 auto 40px;
+  }
+}
+.mainImage img{
+  width: 100%;/* 幅が親要素いっぱいになる様に100%を指定 */
+  max-height: 720px;/* 高さを指定 */
+  object-fit: cover;/* レイアウト崩れを起こさないためにトリミングの処理 */
+  
+  /* 写真の『上側』を基準にトリミングしたい場合 */
+  /* ※デフォルトでは中央基準（center center） */
+  /* object-position: center top; */
+  
+  @media( max-width:768px){
+     aspect-ratio: 1/1;
+     object-position: 65% center;
+  }
+}
+
+/*  section-title  */
+.section-title{
+  font-size: 26px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #0f1845;
+  padding: 0 0 30px;
+  margin-bottom: 40px;
+  position: relative;
+  @media( max-width:768px){
+     font-size: 20px;
+     padding-bottom: 20px;
+     margin-bottom: 30px;
+  }
+}
+.section-title:after{
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: #507dd0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  @media( max-width:768px){
+     width: 30px;
+  }
+}
+
+/*  sub-title  */
+.sub-title{
+  font-size: 22px;
+  margin-bottom: 30px;
+  position: relative;
+  @media( max-width:768px){
+     font-size: 18px;
+  }
+}
+.sub-title::after{
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #999;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+}
+.sub-title span{
+  background: #efebe2;
+  padding-right: 1em; 
+}
+
+/*  section  */
+main section{
+  margin: 0 auto 100px;
+  padding: 0 40px;
+  @media( max-width:768px){
+    margin: 0 auto 50px;
+    padding: 0 20px;
+  }
+}
+section > p{
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+
+
+
+/* /// ABOUT //// */
+#about{
+  max-width: 1200px;  
+}
+
+/*  list_origin  */
+.list_origin li{
+  /* リストスタイルの画像を使う場合 細かい指定しづらい*/
+  /* list-style: circle inside url(../img/home/dot.png) ; */
+  margin-bottom: 10px;
+}
+
+/* 擬似要素のcontentを使う場合 */
+/* section .list_origin li::before{
+  content: "●";
+  color: #35b195;
+  padding-right: 8px;
+} */
+
+/* 擬似要素 + positionを使う場合 */
+section .list_origin li{
+  position: relative;
+  padding-left: 20px;
+  @media( max-width:768px){
+    padding-left: 15px;
+  }
+}
+section .list_origin li::before{ 
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 100%;
+  background: #35b195;
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  @media( max-width:768px){
+    width: 7px;
+    height: 7px;
+  }
+}
+
+
+/* /// CHARACTER //// */
+#character{
+  background: #FFF;
+  padding-block: 80px;
+
+  @media( max-width:768px){
+    padding-block: 50px;
+  }
+}
+.characterList{
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 40px;
+  @media( max-width:768px){
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+  }
+}
+.characterList-item figcaption{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 15px;
+  @media( max-width:768px){
+    margin-top: 10px;
+    font-size: 13px;
+  }
+}
+.characterList-item img{
+  width: 100%;
+
+  border-radius: 999px 999px 0 0;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+
+
+/* /// CONTACT //// */
+
+.contactList{
+  max-width: 970px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  @media( max-width:768px){
+    max-width: 480px;
+    gap: 20px;
+  }
+
+}
+.contactList div{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  @media( max-width:768px){
+    flex-direction: column;
+    align-items: stretch; 
+  }
+}
+.contactList div dt,
+.contactList div dd{
+  background: #FFF;
+  padding: 10px 30px;
+  @media( max-width:768px){
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+.contactList div dt{
+min-width: 330px;
+
+  font-weight: normal;
+  @media( max-width:768px){
+    padding: 0;
+    background: none;
+  }
+}
+.contactList div dd{
+  flex: 1;  
+  background: #FFF;
+  @media( max-width:768px){
+    flex: none;
+  }
+}
+
+/* 
+「flex: 1;」は「flex-grow: 1;」として解釈
+「flex: 1;」は、 「flex-grow: 1; flex-shrink: 1; flex-basis: 0;」のショートハンド（省略形）
+flex-growは、flexアイテムを伸ばす比率を指定する
+flex-shrinkは、flexアイテムを縮む比率を指定する
+flex-basisは、flexアイテムの基準となるサイズを指定する
+
+解除　flex: none; （または flex: initial; ）
+ */

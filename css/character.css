@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+/* //////// #characterDetail //////// */
+
+/* ==================
+      main
+================== */
+#characterDetail main{
+  padding-inline: 40px;
+  @media( max-width:768px){
+     padding-inline: 20px;
+  }
+}
+
+/* pageTtl */
+.pageTtl{
+  text-align: center;
+  font-size: 26px;
+  color: #507dd0;
+  margin-bottom: 80px;  
+  @media( max-width:768px){
+     font-size: 20px;
+     margin-bottom: 40px;   
+  }
+}
+
+/* character-container */
+.character-container{
+  max-width: 1000px;
+  margin: 0 auto 100px;
+  @media( max-width:768px){
+     margin-bottom: 40px;   
+  }
+}
+
+/* character-img */
+.character-img{
+  margin: 0 auto 80px;
+  @media( max-width:768px){
+    margin-bottom: 40px;
+  }
+}
+.character-img img{
+  width: 100%;
+}
+.character-img img:last-of-type{
+  margin-bottom: 0;
+}
+
+/* character-info */
+
+/* character-ttl */
+.character-ttl{
+  font-size: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  @media( max-width:768px){
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+.character-ttl::before{
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url(../img/character/icon_pet2x.png) no-repeat center / contain;
+}
+.character-text p{
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+/* pageNavi */
+/* pageNavi-list */
+.pageNavi-list{
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  @media( max-width:768px){
+    margin-bottom: 40px;
+    gap: 50px
+  }
+}
+.pageNavi-list li a{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.pageNavi-list li:first-child a::before{
+  content: "";
+  width: 16px;
+  height: 12px;
+  /* 背景画像をリピートさせず、中央に配置 */
+  background: url(../img/character/icon_arrow_prev2x.png) no-repeat center / contain;  
+  /* flexのアイテムとして、サイズが勝手に縮まないように固定 */
+  flex-shrink: 0;
+}
+.pageNavi-list li:last-child a::after{
+  content: "";
+  width: 14px;
+  height: 12px;
+  background: url(../img/character/icon_arrow_next2x.png) no-repeat center / contain;
+  
+  flex-shrink: 0;
+}
+
+/* backBtn */
+.backBtn{
+  text-align: center;
+  margin-bottom: 100px;
+  @media( max-width:768px){
+    margin-bottom: 50px;
+  }
+}
+#characterDetail .backBtn a {
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #507dd0;
+  background: #507dd0;
+  color: #FFF;
+  padding: 10px 40px;
+  /* width: 170px; ではなく以下に変更 */
+  min-width: 170px;
+}
+#characterDetail .backBtn a:hover{
+  border: 1px solid #507dd0;
+  background: transparent;
+  color: #507dd0;
+}
+
+
